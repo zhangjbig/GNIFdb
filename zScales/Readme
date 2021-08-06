@@ -1,0 +1,43 @@
+zScales
+ZScales are new and extended AA scales for 87 AA.s, including the 20 coded AA.s and some interesting AA.s explicitly synthesized. The new scales are interpretable in terms of physicochemical properties, which have been tentatively interpreted as quantitatively measuring lipophilicity, size and polarity of the AA side chain. Each Z scale represent an amino-acid property as follows:
+
+Z1: Lipophilicity
+
+Z2: Steric properties (Steric bulk/Polarizability)
+
+Z3: Electronic properties (Polarity / Charge)
+
+Z4 and Z5: Electronegativity, heat of formation, electrophilicity and hardness.
+
+
+Running zScales
+
+Before using zScales, make sure that you have the R language and the R packages Peptides, doParallel, entropy, dplyr, readxl, stringr installed on your computer. If not, after installing R, run the following commands to install the dependencies in R respectively.
+
+Install R Packages
+
+`install.packages("doParallel")`
+`install.packages("Peptides")`
+`install.packages("dplyr")`
+`install.packages("stringr")`
+`install.packages("readxl")`
+`install.packages("entropy")`
+
+Run zScales
+
+Creat a working directory, e.g., ./working
+Unzip the downloaded file in the working directory
+Run zScales:
+path-to-Rscript zscale_calculate.R -i <Input file(csv)> -o <Working directory>
+
+Parameters:
+
+-i: A csv file with two columns. The first column is the sequence of neoantigen's WT Peptide, while the second column is the sequence of neoantigen's Mutant Peptide. Now only neoantigens with nine peptides and one site-specific mutation are supported for calculation. You can download the example data by clicking on the link above.
+-o: Working directory. The folder's path which you put the unziped files in, and where the output files will be located.
+
+Example:
+
+/usr/bin/Rscript zscale_calculate.R -i example.csv -o /feature_calculate/
+
+Citation:
+Sandberg M, Eriksson L, Jonsson J, Sjostrom M, Wold S: New chemical descriptors relevant for the design of biologically active peptides. A multivariate characterization of 87 amino acids. J Med Chem 1998, 41:2481-2491.
