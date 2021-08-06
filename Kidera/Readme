@@ -1,0 +1,35 @@
+Kidera Factor
+In order to describe the conformation and other physical properties of the 20 natural amino acid residues with the fewest parameters, a number of multivariate statistical analyses were performed on the physical properties of 188 amino acid residues. Ten orthogonal properties (factor) acids obtained are Kidera Factors.
+
+
+Running Kidera Factor
+
+Before using Kidera Factor, make sure that you have the R language and the R packages Peptides, doParallel, entropy, dplyr, readxl, stringr installed on your computer. If not, after installing R, run the following commands to install the dependencies in R respectively.
+
+Install R Packages
+
+`install.packages("doParallel")`
+`install.packages("Peptides")`
+`install.packages("dplyr")`
+`install.packages("stringr")`
+`install.packages("readxl")`
+`install.packages("entropy")`
+
+Run Kidera Factor
+
+Creat a working directory, e.g., ./working
+Unzip the downloaded file in the working directory
+Run Kidera Factor:
+path-to-Rscript protFP_calculate.R -i <Input file(csv)> -o <Working directory>
+
+Parameters:
+
+-i: A csv file with two columns. The first column is the sequence of neoantigen's WT Peptide, while the second column is the sequence of neoantigen's Mutant Peptide. Now only neoantigens with nine peptides and one site-specific mutation are supported for calculation. You can download the example data by clicking on the link above.
+-o: Working directory. The folder's path which you put the unziped files in, and where the output files will be located.
+
+Example:
+
+/usr/bin/Rscript protfp_calculate.R -i example.csv -o /feature_calculate/
+
+Citation:
+Kidera, A., Konishi, Y., Oka, M., Ooi, T., & Scheraga, H. A. (1985). Statistical analysis of the physical properties of the 20 naturally occurring amino acids. Journal of Protein Chemistry, 4(1), 23-55.
