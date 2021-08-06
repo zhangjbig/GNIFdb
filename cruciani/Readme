@@ -1,0 +1,39 @@
+cruciani Properties
+The three Cruciani et. al (2004) properties, are the scaled principal component scores that summarize a broad set of descriptors calculated based on the interaction of each amino acid residue with several chemical groups (or "probes"), such as charged ions, methyl, hydroxyl groups, and so forth.
+
+PP1: Polarity
+PP2: Hydrophobicity
+PP3: H-bonding
+
+
+Running cruciani Properties
+
+Before using cruciani Properties, make sure that you have the R language and the R packages Peptides, doParallel, entropy, dplyr, readxl, stringr installed on your computer. If not, after installing R, run the following commands to install the dependencies in R respectively.
+
+Install R Packages
+
+`install.packages("doParallel")`
+`install.packages("Peptides")`
+`install.packages("dplyr")`
+`install.packages("stringr")`
+`install.packages("readxl")`
+`install.packages("entropy")`
+
+Run cruciani Properties
+
+Creat a working directory, e.g., ./working
+Unzip the downloaded file in the working directory
+Run cruciani Properties:
+path-to-Rscript cruciani_calculate.R -i <Input file(csv)> -o <Working directory>
+
+Parameters:
+
+-i: A csv file with two columns. The first column is the sequence of neoantigen's WT Peptide, while the second column is the sequence of neoantigen's Mutant Peptide. Now only neoantigens with nine peptides and one site-specific mutation are supported for calculation. You can download the example data by clicking on the link above.
+-o: Working directory. The folder's path which you put the unziped files in, and where the output files will be located.
+
+Example:
+
+/usr/bin/Rscript cruciani_calculate.R -i example.csv -o /feature_calculate/
+
+Citation:
+Cruciani, G., Baroni, M., Carosati, E., Clementi, M., Valigi, R., and Clementi, S. (2004) Peptide studies by means of principal properties of amino acids derived from MIF descriptors. J. Chemom. 18, 146-155.
