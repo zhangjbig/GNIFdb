@@ -1,0 +1,36 @@
+MSWHIM
+The computed average of MS-WHIM scores of all the amino acids in the corresponding peptide sequence. MS-WHIM score is the three principal components obtained from principal component analysis (PCA) applied to the MS-WHIM 3D description matrix. The MS-WHIM 3D description matrix is a collection of 36 statistical indicators designed to extract and condense molecular space and electrostatics 3D features.
+
+
+Running MSWHIM
+
+Before using MSWHIM, make sure that you have the R language and the R packages Peptides, doParallel, entropy, dplyr, readxl, stringr installed on your computer. If not, after installing R, run the following commands to install the dependencies in R respectively.
+
+Install R Packages
+
+`install.packages("doParallel")`
+`install.packages("Peptides")`
+`install.packages("dplyr")`
+`install.packages("stringr")`
+`install.packages("readxl")`
+`install.packages("entropy")`
+
+Run MSWHIM
+
+Creat a working directory, e.g., ./working
+Unzip the downloaded file in the working directory
+Run MSWHIM:
+path-to-Rscript mswhim_calculate.R -i <Input file(csv)> -o <Working directory>
+
+Parameters:
+
+-i: A csv file with two columns. The first column is the sequence of neoantigen's WT Peptide, while the second column is the sequence of neoantigen's Mutant Peptide. Now only neoantigens with nine peptides and one site-specific mutation are supported for calculation. You can download the example data by clicking on the link above.
+-o: Working directory. The folder's path which you put the unziped files in, and where the output files will be located.
+
+Example:
+
+/usr/bin/Rscript mswhim_calculate.R -i example.csv -o /feature_calculate/
+
+Citation:
+van Westen, G.J., R.F. Swier, J.K. Wegner, A.P. Ijzerman, et al., Benchmarking of protein descriptor sets in proteochemometric modeling (part 1): comparative study of 13 amino acid descriptor sets. J Cheminform, 2013. 5(1): 41.
+van Westen, G.J., R.F. Swier, I. Cortes-Ciriano, J.K. Wegner, et al., Benchmarking of protein descriptor sets in proteochemometric modeling (part 2): modeling performance of 13 amino acid descriptor sets. J Cheminform, 2013. 5(1): 42.
