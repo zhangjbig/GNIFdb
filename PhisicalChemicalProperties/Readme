@@ -1,0 +1,45 @@
+Phisical Chemical Properties
+Amino acids are zwitterionic molecules with an amine and a carboxyl group present in their structure. Some amino acids possess side chains with specific properties that allow grouping them in different ways. This tool classifies amino acids based on their size, side chains, hydrophobicity, charge and their response to pH 7. The output is a matrix with the number and percentage of amino acids of a particular class :
+
+Tiny (A + C + G + S + T)
+Small (A + B + C + D + G + N + P + S + T + V)
+Aliphatic (A + I + L + V)
+Aromatic (F + H + W + Y)
+Non-polar (A + C + F + G + I + L + M + P + V + W + Y)
+Polar (D + E + H + K + N + Q + R + S + T + Z)
+Charged (B + D + E + H + K + R + Z)
+Basic (H + K + R)
+Acidic (B + D + E + Z)
+
+
+Running Phisical Chemical Properties
+
+Before using Phisical Chemical Properties, make sure that you have the R language and the R packages Peptides, doParallel, entropy, dplyr, readxl, stringr installed on your computer. If not, after installing R, run the following commands to install the dependencies in R respectively.
+
+Install R Packages
+
+`install.packages("doParallel")`
+`install.packages("Peptides")`
+`install.packages("dplyr")`
+`install.packages("stringr")`
+`install.packages("readxl")`
+`install.packages("entropy")`
+
+Run Phisical Chemical Properties
+
+Creat a working directory, e.g., ./working
+Unzip the downloaded file in the working directory
+Run Phisical Chemical Properties:
+path-to-Rscript phyche_calculate.R -i <Input file(csv)> -o <Working directory>
+
+Parameters:
+
+-i: A csv file with two columns. The first column is the sequence of neoantigen's WT Peptide, while the second column is the sequence of neoantigen's Mutant Peptide. Now only neoantigens with nine peptides and one site-specific mutation are supported for calculation. You can download the example data by clicking on the link above.
+-o: Working directory. The folder's path which you put the unziped files in, and where the output files will be located.
+
+Example:
+
+/usr/bin/Rscript phyche_calculate.R -i example.csv -o /feature_calculate/
+
+Citation:
+Rice, Peter, Ian Longden, and Alan Bleasby. "EMBOSS: the European molecular biology open software suite." Trends in genetics 16.6 (2000): 276-277.
